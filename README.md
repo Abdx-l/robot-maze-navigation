@@ -9,7 +9,7 @@ python maze.py examples/maze.txt
 python -m unittest discover -s tests -v
 ```
 
-Map legend: `#` wall, `.` corridor, `S` start, `G` goal. The simulator reports visited cells, learned route, and motor-level turn/forward commands. It verifies that replay reaches the goal. This is a software model, not a claim of physical sensor calibration or deployment.
+Map legend: `#` wall, `.` corridor, `S` start, `G` goal. The simulator reports visited cells, learned route, and motor-level turn/forward commands. It verifies that replay reaches the goal.
 
 The assembly module expects bumper/IR-derived obstruction bits on `SENSOR_PORT` (bit 0 front, bit 1 left, bit 2 right), and emits motor command codes on `MOTOR_PORT`. `GOAL_PORT` bit 0 stops the robot. The controller is an integration scaffold: map the symbols to the target HCS12 memory map and provide turn-completion feedback before driving motors.
 
